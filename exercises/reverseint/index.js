@@ -9,11 +9,23 @@
 //   reverseInt(-90) === -9
 
 function reverseInt(n) {
-    if (Math.sign(n) === -1){
-        return parseInt('-' + n.toString().split('').reverse().join(''));
-        } else {
-            return parseInt(n.toString().split('').reverse().join(''));
-        }
+    const reverse = n 
+        .toString()
+        .split('')
+        .reverse()
+        .join('');
+    if(n < 0){
+        return parseInt(reverse) * -1;
+    }
+    return parseInt(reverse);
 }
 
 module.exports = reverseInt;
+
+// function reverseInt(n) {
+//     if (Math.sign(n) === -1) {
+//         return parseInt('-' + n.toString().split('').reverse().join(''));
+//     } else {
+//         return parseInt(n.toString().split('').reverse().join(''));
+//     }
+// }
